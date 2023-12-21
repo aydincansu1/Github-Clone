@@ -1,0 +1,363 @@
+@import "reset";
+@import "variables";
+@import "header";
+@import "modules";
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: $header-bg;
+  font-family: $font;
+  color: $text-bg;
+}
+.main {
+  margin: 40px 130px 20px 130px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 25px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+
+  i {
+    color: $header-right-icon;
+  }
+
+  img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid $text-bg;
+  }
+
+  &-img {
+    position: relative;
+  }
+  &-title {
+    h2 {
+      margin-top: 5px;
+      color: $header-font-bg;
+      font-size: 25px;
+    }
+    p {
+      color: $header-font-bg;
+      font-size: 20px;
+    }
+  }
+  &-job {
+    &-follow {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 7px;
+      color: $text-bg;
+      i {
+        color: $text-bg;
+        font-size: 11px;
+        cursor: pointer;
+        transition: 0.1s;
+        &:hover {
+          color: $link-clr;
+        }
+      }
+      span {
+        color: $text-bg;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          color: $link-clr;
+        }
+      }
+      p {
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          color: $link-clr;
+        }
+      }
+    }
+    p {
+      color: $header-font-bg;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      border: 1px solid $text-bg;
+      padding: 7px 16px;
+      border-radius: 5px;
+      background-color: #21262d;
+      color: #c9d1d9;
+      font-weight: 600;
+      margin: 14px 0;
+      cursor: pointer;
+      transition: border 0.2s;
+
+      &:hover {
+        border: 1px solid $header-left-icon;
+        background-color: #333a42;
+      }
+    }
+  }
+
+  &-contact {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      .fa-envelope {
+        font-size: 13px;
+      }
+
+      span {
+        color: $header-font-bg;
+        margin-left: 8px;
+        font-size: 13px;
+        align-self: flex-start;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          color: $link-clr;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.readme {
+  width: 100%;
+  border: 1px solid $icon-border;
+  border-radius: 5px;
+  padding: 25px;
+
+  &-pen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      color: $header-font-bg;
+      font-size: 11px;
+    }
+    .sa {
+      color: $header-font-bg;
+      font-size: 11px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        color: $link-clr;
+      }
+    }
+    i,
+    span {
+      color: $header-right-icon;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        color: $link-clr;
+      }
+    }
+  }
+  &-text {
+    color: $header-font-bg;
+
+    h1 {
+      align-self: start;
+      align-items: center;
+      font-size: 28px;
+    }
+    hr {
+      border: 1px solid $icon-border;
+    }
+    p {
+      align-items: "left";
+      margin-top: 16px;
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+  &-techstack {
+    margin-top: 45px;
+
+    &-svg {
+      margin-top: 15px;
+    }
+
+    h2 {
+      font-size: 21px;
+    }
+
+    .hr2 {
+      margin: 10px 0;
+    }
+  }
+}
+.pinned-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 27px;
+  margin-bottom: 9px;
+
+  .blue {
+    color: $link-clr;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    color: $text-bg;
+  }
+}
+.pinned-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 18px;
+
+  .pinned-item {
+    border-radius: 5px;
+    border: 1px solid $icon-border;
+    padding: 16px;
+
+    .blue {
+      cursor: pointer;
+      color: $link-clr;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    i {
+      color: $text-bg;
+      font-size: 14px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-left {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        div {
+          border: 1px solid $icon-border;
+          border-radius: 20px;
+          color: #848d97;
+          font-size: 11px;
+          font-weight: bold;
+          padding: 4px 6px;
+        }
+      }
+
+      .fa-grip-vertical {
+        font-size: 12px;
+        cursor: pointer;
+      }
+    }
+
+    .pinned-category {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pinned-text {
+      color: $text-bg;
+      font-size: 11px;
+      margin-top: 7px;
+      margin-bottom: 10px;
+    }
+
+    .pinned-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #e34c26;
+    }
+
+    .pinned-tech {
+      color: $text-bg;
+      font-size: 12px;
+    }
+    .fa-star {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    span {
+      font-size: 12px;
+    }
+    .chat-text,
+    .music-text {
+      margin-bottom: 25px;
+    }
+
+    .chat-clr,
+    .music-clr {
+      background-color: #f1e05a;
+    }
+
+    .hiking-clr {
+      background-color: #c6538c;
+    }
+
+    .art-clr {
+      background-color: #563d7c;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .about {
+    width: 100vh;
+    display: block;
+  }
+  img {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+  .about-container {
+    align-items: center;
+    gap: 20px;
+    display: flex;
+  }
+  .main {
+    margin: 40px 30px 20px 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+}

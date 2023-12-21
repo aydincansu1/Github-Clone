@@ -1,0 +1,252 @@
+@import "variables";
+@import "reset";
+@import "modules";
+
+.header {
+  width: 100%;
+  height: 105px;
+  font-family: $font;
+  border-bottom: 1px solid $icon-border;
+  padding: 16px;
+  background-color: $header-bg;
+
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-left {
+      gap: 9px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .fa-bars {
+        font-size: 17px;
+        color: $logo-bg;
+        border: 1px solid $icon-border;
+        padding: 7px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: border 0.2s;
+
+        &:hover {
+          border: 1px solid $header-left-icon;
+        }
+      }
+      .fa-github {
+        font-size: 32px;
+        color: $logo-bg;
+        cursor: pointer;
+      }
+
+      p {
+        font-size: 14px;
+        transition: 0.2s;
+        color: $header-font-bg;
+        padding: 8px 8px;
+        &:hover {
+          @extend %texthover;
+        }
+      }
+    }
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+
+      &-input {
+        display: flex;
+        position: relative;
+        i {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        .fa-magnifying-glass {
+          left: 10px;
+          color: $text-bg;
+          font-size: 13px;
+          cursor: pointer;
+        }
+        .fa-chevron-right {
+          right: 10px;
+          color: $text-bg;
+          border-left: 1px solid $header-right-icon;
+          padding-left: 4px;
+          font-size: 13px;
+          cursor: pointer;
+        }
+        input {
+          padding-left: 20px;
+          padding-right: 20px;
+          border-radius: 5px;
+          border: 1px solid $icon-border;
+          padding: 5px 8px 5px 30px;
+          width: 350px;
+          height: 33px;
+          background-color: transparent;
+          color: $header-font-bg;
+
+          &::placeholder {
+            color: $placeholder;
+          }
+        }
+      }
+      .hide {
+        display: none;
+      }
+      &-line {
+        width: 0.4px;
+        height: 22px;
+        display: block;
+        background-color: $icon-border;
+      }
+      &-search {
+        i {
+          display: none;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid $icon-border;
+          padding: 7.7px 8px;
+          border-radius: 5px;
+          transition: 0.1s;
+          color: $text-bg;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid $header-left-icon;
+            background-color: rgb(21, 27, 37);
+          }
+        }
+      }
+      &-plus {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 9px;
+        border: 1px solid $icon-border;
+        padding: 7.7px 8px;
+        border-radius: 5px;
+        transition: 0.1s;
+        cursor: pointer;
+        &:hover {
+          @extend %texthover;
+        }
+
+        i {
+          color: $text-bg;
+          font-size: 13px;
+        }
+      }
+      &-circle {
+        .fa-circle-dot {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid $icon-border;
+          padding: 7.7px 8px;
+          border-radius: 5px;
+          transition: 0.1s;
+          color: $text-bg;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid $header-left-icon;
+            background-color: rgb(21, 27, 37);
+          }
+        }
+      }
+      &-request {
+        .fa-code-pull-request {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid $icon-border;
+          padding: 7.7px 8px;
+          border-radius: 5px;
+          transition: 0.1s;
+          color: $text-bg;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid $header-left-icon;
+            background-color: rgb(21, 27, 37);
+          }
+        }
+      }
+      &-tissue {
+        .fa-box-tissue {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid $icon-border;
+          padding: 7.7px 8px;
+          border-radius: 5px;
+          transition: 0.1s;
+          color: $text-bg;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid $header-left-icon;
+            background-color: rgb(21, 27, 37);
+          }
+        }
+      }
+      &-img {
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &-bottom {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 5px;
+    padding-left: 2px;
+    gap: 20px;
+    font-size: 14px;
+    color: $text-bg;
+
+    .overview,
+    .repo,
+    .project,
+    .pack,
+    .stars {
+      @extend %icontext;
+      &:hover {
+        @extend %texthover;
+      }
+    }
+  }
+}
+@media (max-width: 850px) {
+  .header-top-right-plus,
+  .header-top-right-request,
+  .header-top-right-circle,
+  .header-top-right-input,
+  .header-top-right-line {
+    display: none;
+  }
+  .header-top-right-search {
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid $icon-border;
+      padding: 7.7px 8px;
+      border-radius: 5px;
+      transition: 0.1s;
+      color: $text-bg;
+      cursor: pointer;
+      &:hover {
+        border: 1px solid $header-left-icon;
+        background-color: rgb(21, 27, 37);
+      }
+    }
+  }
+}
